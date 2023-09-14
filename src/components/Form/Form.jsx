@@ -5,7 +5,7 @@ import './Form.css'
 export default function Form (props) {
 const {login} = props
 
-    const [userData, setUserdata] = React.useState({
+      const [userData, setUserdata] = React.useState({
         email: "",
         password: ""
       })
@@ -13,10 +13,11 @@ const {login} = props
       const [errors, setErrors] = React.useState({
         email: "",
         password: ""
-         })
-     const [enviado, setEnviado] = React.useState(false)
+        })
 
-     const handleChange = event => {
+      const [enviado, setEnviado] = React.useState(false)
+
+      const handleChange = event => {
         setUserdata({
             ...userData,
             [event.target.name]: event.target.value

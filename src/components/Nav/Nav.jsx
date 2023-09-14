@@ -26,5 +26,4 @@ export default function Nav({onSearch, randomChar, setAccess}) {
 
     <button className="btnlo" onClick={handleLogout}>LOGOUT</button>
     </div>
-    
     )}

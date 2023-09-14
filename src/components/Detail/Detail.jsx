@@ -7,7 +7,7 @@ export default function Detail() {
   const params = useParams();
   const { id } = params;
 
-  const [character, setCharacter] = useState({}); // Cambio: inicializar como objeto vacío
+  const [character, setCharacter] = useState({});
 
   useEffect(() => {
     axios(`https://rickandmortyapi.com/api/character/${id}`)

@@ -5,17 +5,9 @@ export default function Validation(datos) {
     if(!emailRegex.test(datos.email)) {
         errors.email = "Debes ingresar un email valido"
     }
-    // if(datos.email.length === 0) {
-    //     errors.email = "Debes ingresar un email"
-    // }
-    // if(datos.email.length > 35) {
-    //     errors.email = "El email debe tener menos de 35 caracteres"
-    // }
+    
     if(!pwRegex.test(datos.password)) {
         errors.password = "la contraseña debe tener entre 6-10 caracteres y al menos 1 numero"
     }
-    // if(datos.email.length === 0) {
-    //     errors.password = "la contraseña debe tener entre 6-10 caracteres"
-    
     return errors
 }

@@ -11,9 +11,8 @@ export default function SearchBar({onSearch}) {
    const handleAdd = () => {
       setId('')
       onSearch(id)
-    }
+   }
    return (
-
       <div>
          <input
          className="inputB"

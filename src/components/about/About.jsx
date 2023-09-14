@@ -2,7 +2,7 @@ import "./About.css"
 export default function About() {
     return (
         <div className="aboutMe">
-             <div className="detail">
+        <div className="detail">
         <h2 className="NombreD">Name: Ed Jimenez</h2>
         <h2 className="NombreS">Status: Tired & Crazy</h2>
         <h2 className="NombreSP">Specie: Weirdo </h2>
