@@ -1,0 +1,135 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  :root{
+    position: relative;
+    top: 10%;
+    --card-height: 38vh;
+    --card-width: calc(var(--card-height) / 1.5);
+    
+  }
+  .imagenderef {
+    position: absolute;
+    width: 101%;
+    left: 10%;
+    border-radius: 10%;
+    top: -70px;
+    right: 80px;
+    box-shadow: 0 0 5px #ccc;
+    transition: transform 0.3s ease;
+  }
+
+  .Card:hover .imagenderef {
+    transform: skew(45deg, 45deg);
+  }
+  
+  .Card {
+    top: 70px;
+    border-radius: 50%;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    margin:26px;
+    text-align:center;
+    font-size: 120%;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+    
+  }
+  .NavLink{
+    color: rgb(249, 249, 249);
+    cursor: pointer;
+    font-family: cursive;
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+  .heartBon{
+    position: absolute;
+    top: -45px;
+    left: 40px;
+    padding: 25px;
+    border: none;
+    background-image: url(/Recursos/icons8-amor-circled-48.png);
+    background-color: transparent;
+    background-size: 50px;
+  }
+  .heartBoff{
+    position: absolute;
+    top: -45px;
+    left: 40px;
+    padding: 25px;
+    border: none;
+    background-image: url(/Recursos/icons8-amor-circled-4.png);
+    background-color: transparent;
+    background-size: 50px;
+  }
+  .closeC{
+    position: absolute;
+    top: -40px;
+    padding: 20px;
+    border: none;
+    background-image: url(/Recursos/icons8-botón-x-64.png);
+    background-color: transparent;
+    background-size: 40px;
+  }
+  
+.NavLink,
+.heartBon,
+.heartBoff,
+.closeC {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.Card:hover .NavLink,
+.Card:hover .heartBon,
+.Card:hover .closeC,
+.Card:hover .heartBoff {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s, 0s
+}
+  .Card:hover {
+    color: rgb(249, 249, 249);
+    transition: color 1s;
+  }
+  .Card:hover:before, .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .Card::after {
+    position: absolute;
+    content: "";
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+    var(--rotate)
+    , #04922f, #b15e0a 43%, #cf2a2a);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+    --rotate: 0deg;
+    }
+    100% {
+    --rotate: 360deg;
+    }
+  } 

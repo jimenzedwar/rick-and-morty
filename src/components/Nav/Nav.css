@@ -1,0 +1,194 @@
+.nav {
+    position: fixed;
+    background: linear-gradient(to left, rgba(56, 55, 55, 0.815) 5%, rgba(38, 36, 38, 0.9));
+    box-shadow: grey;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .buttonHome {
+    text-decoration: none;
+    position: absolute;
+    top: 20%;
+    left: 5% ;
+    border: none;
+    font-size: 150%;
+    font-family: inherit;
+    color:#fff;
+    width: 180px;
+    line-height: 170%;
+    text-align: center;
+    background-color:  #23631f;
+    background-size: 300%;
+    border-radius: 200%;
+    z-index: 1;
+  }
+  .buttonAbout {
+    text-decoration: none;
+    position: absolute;
+    border: none;
+    font-size: 150%;
+    top: 20%;
+    right: 19%;
+    font-family: inherit;
+    color: #fff;
+    width: 180px;
+    line-height: 170%;
+    text-align: center;
+    background-color:  #23631f;
+    background-size: 300%;
+    border-radius: 200%;
+    z-index: 1;
+  }
+  .buttonRandomC {
+    text-decoration: none;
+    position: absolute;
+    border: none;
+    font-size: 150%;
+    top: 20%;
+    right: 33%;
+    font-family: inherit;
+    color: #fff;
+    width: 180px;
+    line-height: 170%;
+    text-align: center;
+    background-color:  #23631f;
+    background-size: 300%;
+    border-radius: 200%;
+    z-index: 1;
+  }
+
+  .btnlo {
+    text-decoration: none;
+    position: absolute;
+    border: none;
+    font-size: 150%;
+    top: 20%;
+    right: 5%;
+    font-family: inherit;
+    color: #fff;
+    width: 180px;
+    line-height: 170%;
+    text-align: center;
+    background-color:  #23631f;
+    background-size: 300%;
+    border-radius: 200%;
+    z-index: 1;
+  }
+  .favorites {
+    text-decoration: none;
+    position: absolute;
+    border: none;
+    font-size: 150%;
+    top: 20%;
+    left: 20%;
+    font-family: inherit;
+    color: #fff;
+    width: 180px;
+    line-height: 170%;
+    text-align: center;
+    background-color:  #23631f;
+    background-size: 300%;
+    border-radius: 200%;
+    z-index: 1;
+  }
+
+  .buttonHome:before,
+  .favorites:before,
+  .btnlo:before,
+  .buttonRandomC:before,
+  .buttonAbout:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background-color: #23631f;
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+  }
+  
+  .buttonHome:hover::before,
+  .favorites:hover::before,
+  .btnlo:hover::before,
+  .buttonRandomC:hover::before,
+  .buttonAbout:hover::before {
+    filter: blur(20px);
+  }
+  
+  .buttonHome:active,
+  .btnlo:active,
+  .buttonRandomC:active,
+  .favorites:active,
+  .buttonAbout:active {
+    background-color:  #23631f;
+  }
+  .inputB {
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    width: 300px;
+    height: 10px;
+    border-radius: 50px;
+    padding: 20px;
+    transition-duration: 500ms;
+    cursor: text;
+    outline: none;
+    background: url(/Recursos/contactos.png) no-repeat;
+    background-size: 40px;
+    background-position: 9px 50%;
+    padding-left: 50px;
+    border: 1px solid #ff9950;
+    background-color: transparent;
+    color: #fff;
+    font-size: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    
+    .buttonAbout {
+      top: 30%;
+      width: 69px;
+      height: 25px;
+      left: 18%;
+      font-size: 100%;
+    }
+    .btnlo {
+      top: 30%;
+      width: 25px;
+      height: 25px;
+      right: 5%;
+      font-size: 0px;
+      background: url(/Recursos/icons8-logout-64.png) no-repeat center center;
+      background-size: cover;
+    }
+    .buttonRandomC{
+      width: 70px;
+      right: 16%;
+      font-size: 87%;
+      top: 30%;
+    }
+    .buttonHome
+    {
+      width: 60px;
+      left: 30px;
+      font-size: 90%;
+      top: 30%;
+    }
+    .inputB{
+      width: 160px;
+      padding: 14px;
+      font-size: 30px;
+      background-size: 28px;
+      top: 19px;
+      left: 32%;
+    }
+  }

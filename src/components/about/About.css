@@ -1,0 +1,143 @@
+
+.aboutMe{
+    position: relative;
+    margin: 50px;
+    padding: 10%;
+    font-family: sans-serif;
+    bottom: 400px;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 50%);
+    background: transparent;
+    box-sizing: border-box;
+    box-shadow: 0, 15px 25px rgba(0, 0, 0, 56);
+    border-radius: 8%;
+    border-bottom: 1px solid #ebe3e3;
+    border-top: 1px solid #ebe3e3;
+    overflow: hidden;
+  }
+  
+  .marca {
+     position: absolute;
+     width: 80%;
+     height: 80%;
+     right: -850px;
+     bottom: -200px;
+     z-index: -1;
+   }
+   
+  .NombreD{
+    position: relative;
+    top: -80px;
+    left: 230px;
+    font-size: 600%;
+    width: 300%;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    text-align: left;
+    }
+.NombreS{
+    position: relative;
+    top: -80px;
+    left: 230px;
+    font-size: 700%;
+    width: 300%;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    text-align: left;
+}
+.NombreSP{
+    position: relative;
+    top: -50px;
+    left: -110px;
+    font-size: 700%;
+    width: 500px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    text-align: left;
+}
+.NombreG{
+    position: relative;
+    top: -60px;
+    left: -110px;
+    font-size: 700%;
+    width: 500px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    text-align: left;
+}
+.NombreO{
+    position: relative;
+    top: -300px;
+    left: 500px;
+    font-size: 700%;
+    width: 600px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    text-align: left;
+}
+
+ .imagenderefe {
+    position: absolute;
+    border-radius: 10%;
+    width: 100%;
+    top: -70px;
+    right: 80px;
+    box-shadow: 0 0 5px #ccc;
+  }
+ .imagenderer {
+    position: absolute;
+    border-radius: 10%;
+    width: 100%;
+    top: -70px;
+    right: 80px;
+    box-shadow: 0 0 5px #ccc;
+    z-index: -1;
+  }
+
+
+  .imagenderefe:hover {
+    transition: 0.3s;
+    visibility: hidden;
+  }
+  .detail {
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    margin:12px;
+    text-align: center;
+    font-size: 50%;
+    color: rgb(88 199 250 / 0%);
+    font-family: cursive;
+  }
+  
+
+  .detail::after {
+    position: absolute;
+    border-radius: 60%;
+    content: "";
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: -21;
+    padding: 70%;
+    width: 160%;
+    transform: scale(0.8);
+    filter: blur(140px);
+    background-image: linear-gradient(
+      var(--rotate)
+      , #04922f, #b15e0a 43%, #cf2a2a);
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }

@@ -1,0 +1,48 @@
+.btnAdd {
+  text-decoration: none;
+  position: absolute;
+  border: none;
+  font-size: 150%;
+  font-family: inherit;
+  color: #ffffff;
+  top: 20%;
+  left: 46.5%;
+  width: 180px;
+  line-height: 170%;
+  text-align: center;
+  background-color:  #23631f;
+  background-size: 300%;
+  border-radius: 100%;
+  z-index: 1;
+}
+  .btnAdd:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background-color:  #23631f;
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+  }
+
+  .btnAdd:hover::before {
+    filter: blur(20px);
+  }
+  
+  .btnAdd:active {
+    background-color:  #23631f;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .btnAdd {
+      position: relative;
+      width: 60px;
+      font-size: 90%;
+      top: 13px;
+      left: 90px;
+    }
+  }
