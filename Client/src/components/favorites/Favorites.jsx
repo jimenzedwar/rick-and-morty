@@ -15,6 +15,7 @@ const handleOrder = (e) => {
    dispatch(orderCards(e.target.value))
    setAux(true)
 }
+
 const handleFilter = (e) => {
    dispatch(filterCards(e.target.value))
 }
@@ -37,7 +38,7 @@ const [aux, setAux] = React.useState(false)
          </select>
          </div>
          <div className='Favorites'>
-         {myFavorites?.map(ele => (
+         {myFavorites?.map((ele, index) => (
             <Card
                id={ele.id}
                key={ele.id}
@@ -45,7 +46,7 @@ const [aux, setAux] = React.useState(false)
                status={ele.status}
                species={ele.species}
                gender={ele.gender}
-               origin={ele.origin.name}
+               origin={ele.origin}
                image={ele.image}
             />
          ))}

@@ -53,38 +53,19 @@ setCharacters(characters.filter((character) => {
 
 const navigate = useNavigate();
 
-const [access, setAccess] = React.useState(() => {
-   const cachedAccess = localStorage.getItem('access');
-   return cachedAccess === 'true';
-});
-const EMAIL = "jimenzeddi@gmail.com"
-const PASSWORD = "contra22"
+const [access, setAccess] = React.useState((false));
 
 const login = (userData) => {
-   if (userData.password === PASSWORD && userData.email === EMAIL) {
-      setAccess(true);
-      localStorage.setItem('access', 'true');
-      navigate('/home');
-   }
+   const { email, password } = userData;
+   const URL = 'http://localhost:3001/rickandmorty/login/';
+   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+      const { access } = data;
+      setAccess(data);
+      access && navigate('/home');
+   });
 }
 const location = useLocation()
 
-useEffect(() => {
-   const cachedCharacters = localStorage.getItem('characters');
-   const cachedAccess = localStorage.getItem('access');
-
-   if (cachedCharacters) {
-      setCharacters(JSON.parse(cachedCharacters));
-   }
-
-   if (cachedAccess) {
-      setAccess(true);
-   }
-}, []);
-
-useEffect(() => {
-   localStorage.setItem('characters', JSON.stringify(characters));
-}, [characters]);
 
 useEffect(() => {
    if (!access && location.pathname !== "/") {

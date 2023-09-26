@@ -1,33 +1,16 @@
 import {ADD_FAV, REMOVE_FAV, FILTER, ORDER} from "../redux/actions"
-
-const getLocalStorageFavorites = () => {
-    const favorites = localStorage.getItem("myFavorites");
-    return favorites ? JSON.parse(favorites) : [];  };
-
-    const initialState = {
-        myFavorites: getLocalStorageFavorites(),
-        allCharacters: []
-    };
+import axios from "axios"
+const initialState = {
+    myFavorites: [],
+    allCharacters: [],
+  };
 
 const reducer = (state = initialState, action) => {
 switch (action.type) {
     case ADD_FAV:
-    const updatedFavorites = [...state.myFavorites, action.payload];
-    localStorage.setItem("myFavorites", JSON.stringify(updatedFavorites));
-    return {
-        ...state,
-        myFavorites: updatedFavorites,
-        allCharacters: [...state.allCharacters, action.payload]
-    };
+    return { ...state, myFavorites: action.payload, allCharacters: action.payload };
     case REMOVE_FAV:
-    const filteredFavorites = state.myFavorites.filter(
-        (ele) => ele.id !== action.payload
-        );
-    localStorage.setItem("myFavorites", JSON.stringify(filteredFavorites));
-    return {
-        ...state,
-        myFavorites: filteredFavorites
-    };
+    return { ...state, myFavorites: action.payload, allCharacters: action.payload};
     case FILTER:
     const copyFilter = [...state.allCharacters];
     return {
