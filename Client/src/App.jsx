@@ -18,20 +18,18 @@ function App() {
 
    const [characters, setCharacters] = React.useState([]);
 
-   function onSearch (id) {
-      axios.get(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
-         if (data.id) {
-         if(!characters.some((character) => character.id === data.id)) {
-         setCharacters((prevCharacters)=> [...prevCharacters, data]) 
+   async function  onSearch (id) {
+      try {
+         const {data} = await axios.get(`http://localhost:3001/rickandmorty/character/${id}`)
+      if(!characters.some((character) => character.id === data.id)) {
+         setCharacters((prevCharacters)=> [...prevCharacters, data])
       } else {
-            window.alert('Este personaje ya esta en la lista') } }
-            else {
-               window.alert('No hay personajes con este ID!')
-            }
-            })
-            .catch(()=> alert("Hubo un error al cargar los datos de la API."))
-         }
-
+         alert('This character already exists try another ID')
+      }
+      } catch (error) {
+         alert(error.message)
+      }
+      } 
 
 
          function randomChar () {
@@ -55,14 +53,17 @@ const navigate = useNavigate();
 
 const [access, setAccess] = React.useState((false));
 
-const login = (userData) => {
+const login = async (userData) => {
    const { email, password } = userData;
    const URL = 'http://localhost:3001/rickandmorty/login/';
-   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+   try {
+      const { data } = await axios.get(URL + `?email=${email}&password=${password}`)
       const { access } = data;
       setAccess(data);
       access && navigate('/home');
-   });
+   } catch (error) {
+      alert(error.message)
+   }
 }
 const location = useLocation()
 
