@@ -18,7 +18,7 @@ function App() {
 
    const [characters, setCharacters] = React.useState([]);
 
-   async function  onSearch (id) {
+   async function onSearch (id) {
       try {
          const {data} = await axios.get(`http://localhost:3001/rickandmorty/character/${id}`)
       if(!characters.some((character) => character.id === data.id)) {
@@ -30,7 +30,6 @@ function App() {
          alert(error.message)
       }
       } 
-
 
          function randomChar () {
            const numeroRandom = Math.floor(Math.random() * 826) + 1
@@ -62,7 +61,7 @@ const login = async (userData) => {
       setAccess(data);
       access && navigate('/home');
    } catch (error) {
-      alert(error.message)
+      console.log(error)
    }
 }
 const location = useLocation()

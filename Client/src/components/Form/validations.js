@@ -9,5 +9,9 @@ export default function Validation(datos) {
     if(!pwRegex.test(datos.password)) {
         errors.password = "la contraseña debe tener entre 6-10 caracteres y al menos 1 numero"
     }
+    // if (email === email && pw === pw) {
+    //     
+    // }
+    else errors.accessDenied = "Access denied, please try with other data"
     return errors
 }

@@ -1,5 +1,6 @@
 import {ADD_FAV, REMOVE_FAV, FILTER, ORDER} from "../redux/actions"
 import axios from "axios"
+
 const initialState = {
     myFavorites: [],
     allCharacters: [],

@@ -3,7 +3,7 @@ import Validation from './validations.js'
 import './Form.css'
 
 export default function Form (props) {
-const {login} = props
+const { login } = props
 
       const [userData, setUserdata] = React.useState({
         email: "",
@@ -29,7 +29,7 @@ const {login} = props
         setErrors(Validation(userData));
         setEnviado(true);
         login(userData);
-      };
+      }
       
       return (
         <div className='Login-box'> 
@@ -56,6 +56,7 @@ const {login} = props
                 onChange={handleChange}
               />
               <label>Password:</label>
+              <p style={{ color: "orange" }}>{enviado && !errors.password && !errors.email && errors.accessDenied ? errors.accessDenied : null}</p>
             </div>
             <button>
               <span></span>
