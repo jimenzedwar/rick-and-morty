@@ -5,7 +5,6 @@ export default function Validation(datos) {
     if(!emailRegex.test(datos.email)) {
         errors.email = "Debes ingresar un email valido"
     }
-    
     if(!pwRegex.test(datos.password)) {
         errors.password = "la contraseña debe tener entre 6-10 caracteres y al menos 1 numero"
     }
