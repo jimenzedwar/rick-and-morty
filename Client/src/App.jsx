@@ -7,7 +7,7 @@ import About from "./components/about/About.jsx"
 import Detail from "./components/Detail/Detail.jsx"
 import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
-import Error from "./components/Error/Error.jsx"
+import Error from "./components/Error/Error.jsx";
 import Form from './components/Form/Form';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
